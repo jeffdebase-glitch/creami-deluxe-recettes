@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#241b16">
+  <title>French Ninja Creami Deluxe — Recettes</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="texture"></div>
+
+  <header class="hero">
+    <div class="eyebrow">French Ninja Creami Deluxe</div>
+    <h1>Créez. Mixez. Savourez.</h1>
+    <p>Des recettes onctueuses, protéinées et gourmandes — recherche par photo, calories et macros.</p>
+
+    <div class="search-card">
+      <label class="searchbar">
+        <span>⌕</span>
+        <input id="searchInput" type="search" placeholder="Rechercher une saveur, un ingrédient..." autocomplete="off">
+      </label>
+
+      <div class="quick-chips" id="quickChips">
+        <button class="chip active" data-chip="all">Tout</button>
+        <button class="chip" data-chip="chocolat">Chocolat</button>
+        <button class="chip" data-chip="oreo">Oreo</button>
+        <button class="chip" data-chip="caramel">Caramel</button>
+        <button class="chip" data-chip="fruité">Fruités</button>
+        <button class="chip" data-chip="très protéiné">Très protéiné</button>
+        <button class="chip" data-chip="moins de 400 kcal">-400 kcal</button>
+      </div>
+
+      <div class="filters">
+        <label>
+          <span>Kcal max</span>
+          <input id="kcalMax" type="number" inputmode="numeric" min="0" max="900" placeholder="ex. 450">
+        </label>
+        <label>
+          <span>Prot min</span>
+          <input id="proteinMin" type="number" inputmode="numeric" min="0" max="100" placeholder="ex. 40">
+        </label>
+        <label>
+          <span>Trier</span>
+          <select id="sortSelect">
+            <option value="popular">Recommandées</option>
+            <option value="kcalAsc">Moins calorique</option>
+            <option value="kcalDesc">Plus calorique</option>
+            <option value="proteinDesc">Plus protéiné</option>
+            <option value="az">A → Z</option>
+          </select>
+        </label>
+        <button id="resetBtn" class="reset">Réinitialiser</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="browse">
+      <div class="browse-head">
+        <div>
+          <h2>Nos créations pour vous</h2>
+          <p id="resultCount">—</p>
+        </div>
+        <button id="favoritesToggle" class="ghost">♡ Favoris</button>
+      </div>
+
+      <div id="cards" class="cards"></div>
+    </section>
+
+    <aside id="detail" class="detail" aria-live="polite"></aside>
+  </main>
+
+  <div id="mobileOverlay" class="mobile-overlay" hidden></div>
+
+  <script src="recipes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

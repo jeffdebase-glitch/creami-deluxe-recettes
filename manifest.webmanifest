@@ -1,0 +1,9 @@
+{
+  "name": "French Ninja Creami Deluxe",
+  "short_name": "Creami Deluxe",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f7f1e8",
+  "theme_color": "#241b16",
+  "description": "Recettes Ninja Creami Deluxe avec recherche, photos, calories et macros."
+}
