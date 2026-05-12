@@ -1,4 +1,3 @@
-
 const $ = (sel, root=document) => root.querySelector(sel);
 const $$ = (sel, root=document) => [...root.querySelectorAll(sel)];
 
@@ -196,7 +195,10 @@ function renderDetail(r, root=$("#detail")){
         <textarea class="note-field" data-note="${r.id}" placeholder="Ajoute ta variante, ton avis, ou un ajustement de texture...">${escapeHtml(notes[r.id] || "")}</textarea>
       </section>
 
-      ${r.recipeImage ? `<a class="source-link" href="${r.recipeImage}" target="_blank" rel="noopener">Voir la fiche image d’origine</a>` : ""}
+      <div class="action-links">
+        ${r.videoUrl ? `<a class="source-link video-link" href="${escapeHtml(r.videoUrl)}" target="_blank" rel="noopener">▶ Voir la vidéo QR</a>` : ""}
+        ${r.recipeImage ? `<a class="source-link" href="${r.recipeImage}" target="_blank" rel="noopener">Voir la fiche image d’origine</a>` : ""}
+      </div>
     </div>
   `;
   $(".favoriteDetail", root).addEventListener("click", () => toggleFav(r.id));
@@ -238,7 +240,7 @@ function bind(){
     });
   });
   $("#mobileOverlay").addEventListener("click", e => {
-    if(e.target.id === "mobileOverlay") closeMobile();
+    if(e.target.id === "#mobileOverlay") closeMobile();
   });
   window.addEventListener("keydown", e => {
     if(e.key === "Escape" && !$("#mobileOverlay").hidden) closeMobile();
