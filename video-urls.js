@@ -76,3 +76,11 @@ window.VIDEO_URLS = {
   "turtle-pecan-cluster": "https://www.instagram.com/p/DTmGaBljtix/",
   "vanilla-pecan-blondie": "https://www.instagram.com/p/DL7KV62SVX1/"
 };
+
+// Applique les liens vidéo aux recettes avant le chargement de app.js.
+if (window.RECIPES && window.VIDEO_URLS) {
+  window.RECIPES.forEach(recipe => {
+    const url = window.VIDEO_URLS[recipe.id];
+    if (url) recipe.videoUrl = url;
+  });
+}
